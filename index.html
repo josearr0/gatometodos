@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>José Alejandro Rodríguez Ramírez</h1>
+    <br>
+    <h2>Juego del gato con metodos:</h2>
+    <br>
+    <p>public static void main(String[] args) {<br />Scanner sc = new Scanner(System.in);<br />int gato[][] = new
+        int[3][3];<br />int x = 0, y = 0, gano;<br />//INICIAR EN CERO TODAS LAS CASILLAS<br />gato[0][0] =
+        0;<br />gato[0][1] = 0;<br />gato[0][2] = 0;</p>
+    <p>gato[1][0] = 0;<br />gato[1][1] = 0;<br />gato[1][2] = 0;</p>
+    <p>gato[2][0] = 0;<br />gato[2][1] = 0;<br />gato[2][2] = 0;</p>
+    <p>for (int i = 0; i &lt; 5; i++) {<br />System.out.println("Jugador 1: &iquest;En qu&eacute; posici&oacute;n de x
+        quiere colocar?");<br />x = sc.nextInt();<br />System.out.println("Jugador 1: &iquest;En qu&eacute;
+        posici&oacute;n de y quiere colocar?");<br />y = sc.nextInt();<br />gato[x][y] =
+        1;<br />System.out.println("");<br />despliega(gato);<br />gano = ganador(gato);<br />if (gano == 1)
+        {<br />System.out.println("El jugador 1 gan&oacute;!!");<br />break;<br />} else if (gano == 2)
+        {<br />System.out.println("El jugador 2 gan&oacute;!!");<br />break;<br />}</p>
+    <p>System.out.println("");<br />for (int j = 0; j &lt; 1; j++) {<br />System.out.println("Jugador 2: &iquest;En
+        qu&eacute; posici&oacute;n de x quiere colocar?");<br />x = sc.nextInt();<br />System.out.println("Jugador 2:
+        &iquest;En qu&eacute; posici&oacute;n de y quiere colocar?");<br />y = sc.nextInt();<br />gato[x][y] =
+        2;<br />despliega(gato);<br />System.out.println("");<br />}</p>
+    <p>}<br />}</p>
+    <p>public static int ganador(int gato[][]) {<br />int gano = 0;<br />if (gato[0][0] == 1 &amp;&amp; gato[0][1] == 1
+        &amp;&amp; gato[0][2] == 1) {<br />gano = 1;<br />} else if (gato[1][0] == 1 &amp;&amp; gato[1][1] == 1
+        &amp;&amp; gato[1][2] == 1) {<br />gano = 1;<br />} else if (gato[2][0] == 1 &amp;&amp; gato[2][1] == 1
+        &amp;&amp; gato[2][2] == 1) {<br />gano = 1;<br />} else if (gato[0][0] == 1 &amp;&amp; gato[1][0] == 1
+        &amp;&amp; gato[2][0] == 1) {<br />gano = 1;<br />} else if (gato[0][1] == 1 &amp;&amp; gato[1][1] == 1
+        &amp;&amp; gato[2][1] == 1) {<br />gano = 1;<br />} else if (gato[0][2] == 1 &amp;&amp; gato[1][2] == 1
+        &amp;&amp; gato[2][2] == 1) {<br />gano = 1;<br />} else if (gato[0][0] == 1 &amp;&amp; gato[1][1] == 1
+        &amp;&amp; gato[2][2] == 1) {<br />gano = 1;<br />} else if (gato[0][2] == 1 &amp;&amp; gato[1][1] == 1
+        &amp;&amp; gato[2][0] == 1) {<br />gano = 1;}</p>
+    <p>if (gato[0][0] == 2 &amp;&amp; gato[0][1] == 2 &amp;&amp; gato[0][2] == 2) {<br />gano = 2;<br />}<br />else if
+        (gato[1][0] == 2 &amp;&amp; gato[1][1] == 2 &amp;&amp; gato[1][2] == 2) {<br />gano = 2;<br />} else if
+        (gato[2][0] == 2 &amp;&amp; gato[2][1] == 2 &amp;&amp; gato[2][2] == 2) {</p>
+    <p>gano = 2;<br />} else if (gato[0][0] == 2 &amp;&amp; gato[1][0] == 2 &amp;&amp; gato[2][0] == 2) {<br />gano =
+        2;<br />} else if (gato[0][1] == 2 &amp;&amp; gato[1][1] == 2 &amp;&amp; gato[2][1] == 2) {<br />gano =
+        2;<br />} else if (gato[0][2] == 2 &amp;&amp; gato[1][2] == 2 &amp;&amp; gato[2][2] == 2) {<br />gano =
+        2;<br />} else if (gato[0][0] == 2 &amp;&amp; gato[1][1] == 2 &amp;&amp; gato[2][2] == 2) {<br />gano =
+        2;<br />} else if (gato[0][2] == 2 &amp;&amp; gato[1][1] == 2 &amp;&amp; gato[2][0] == 2) {<br />gano =
+        2;<br />}<br />return gano;<br />}</p>
+    <p>public static void despliega(int w[][]) {</p>
+    <p>System.out.print(w[0][0]);<br />System.out.print(w[0][1]);<br />System.out.print(w[0][2]);</p>
+    <p>System.out.println();</p>
+    <p>System.out.print(w[1][0]);<br />System.out.print(w[1][1]);<br />System.out.print(w[1][2]);</p>
+    <p>System.out.println();</p>
+    <p>System.out.print(w[2][0]);<br />System.out.print(w[2][1]);<br />System.out.print(w[2][2]);</p>
+    <p>System.out.println();<br />System.out.println("---------------");<br />}</p>
+    <br>
+    <h1>Ejemplo: </h1>
+    <br>
+    <img src="img1.png" alt="">
+</body>
+
+</html>
